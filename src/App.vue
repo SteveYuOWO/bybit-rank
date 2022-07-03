@@ -19,12 +19,7 @@ interface TeamInfo {
 const teamsInfoGlobal: Ref<TeamInfo[]> = ref([])
 const teamsInfoAsia: Ref<TeamInfo[]> = ref([])
 
-axios.post('https://api2.bybit.com/s1/wsot2022/squad/rank', {
-  config_id: "1",
-  metric_type: "SQUAD_PROFIT_RATIO",
-  page: 1,
-  page_size: 100
-}).then(response => teamsInfoGlobal.value = response.data.result.team_profit_ratio.teams)
+axios.get('http://43.152.215.211:5000/s1/wsot2022/squad/rank').then(response => teamsInfoGlobal.value = response.data.result.team_profit_ratio.teams)
 
 const teamsTableHeader: string[] = [
   "排名",
