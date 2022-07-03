@@ -41,7 +41,7 @@ watchEffect(() => {
   const globalRank = teamsInfoGlobal.value.find(teamInfo => teamInfo.squad_name === '王不愛的戰隊')?.rank ?? 0;
   rank.value = {
     globalRank,
-    asiaRank: asiaRank === -1 ? 0 : asiaRank,
+    asiaRank: asiaRank === -1 ? 0 : asiaRank + 1,
   };
 })
 
